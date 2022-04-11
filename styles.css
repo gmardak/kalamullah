@@ -1,0 +1,211 @@
+
+/* General */
+body{
+  background-color: #f9f4ed;
+  color: #2a2a2a;
+  margin: 0;
+}
+
+a, a:hover, a:focus, a:active {
+     text-decoration: none;
+     color: inherit;
+}
+
+.container-fluid{
+    padding:0;
+}
+
+.content-navbar{
+  height: 55px;
+}
+
+.navbar{
+  background-color: #f9f4ed;
+  margin-top: 0px;
+  transition: margin-top 0.9s;
+}
+
+#offcanvasNavbar{
+  background-color: #eaeaea;
+}
+
+.thick-line{
+  height: 300px;
+  background-color: #af695c;
+}
+.quran-sign{
+  display: block;
+  margin: auto;
+}
+
+.intro-text{
+  background-color: #eaeaea;
+  border: 1px solid #af695c;
+  border-radius: 5px;
+  margin-top: 20px;
+  color:inherit;
+  padding: 10px 10px 0 10px;
+}
+
+.intro-text h5{
+  color:#af695c;
+}
+
+.sura-table{
+  margin-top: 20px;
+}
+
+.sura-box{
+  border: 1px solid #d9d9d9;
+  border-radius: 3px;
+  padding: 10px 12px 10px 12px;
+  /* padding-top: 10px;
+  padding-bottom: 10px; */
+}
+
+.rhombus-col{
+  width: 50px;
+  margin-right:10px;
+  margin-top:7px;
+}
+
+.rhombus{
+  background-color: #eaeaea;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  transform: rotate(45deg);
+  /* border: 1px solid #d4d4d4; */
+  border-radius: 4px;
+  /* margin: 13px 0px 0 15px; */
+}
+
+.sura-number{
+  transform: rotate(-45deg);
+  font-size: 1.5em;
+}
+
+.sura-box-text-left{
+  margin-left:10px;
+}
+
+.sura-box-text-right{
+  padding-right: 0;
+}
+
+.sura-name-kazakh{
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.sura-name-arabic{
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.sura-box:hover{
+  background-color: #eaeaea;
+  border: 1px solid #af695c;
+}
+
+.sura-box:hover .rhombus{
+  background-color: #af695c;
+  border: 1px solid #af695c;
+  color: #eaeaea;
+}
+
+.sura-box:hover .sura-location{
+  color: #af695c;
+}
+
+.sura-box:hover .ayat-number{
+  color: #af695c;
+}
+
+@media (min-width: 1320px) {
+  .container{
+    max-width:1220px;
+  }
+}
+
+@media(min-width: 100px){
+  .intro-text{
+    margin-left:5px;
+    margin-right: 5px;
+  }
+}
+
+/* Fatiha */
+h3{
+  text-align: center;
+}
+
+
+.fatiha{
+  font-size: 137%;
+  color: inherit;
+  margin-top:60px;
+  margin-bottom: 100px;
+}
+
+.class-progress-bar{
+  position: fixed;
+  background-color: #f9f4ed;
+  margin-top: 0px;
+  transition: margin-top 0.9s;
+  box-shadow: 0 4px 6px -2px #adadad;
+}
+
+.progress-bar{
+  background-color: #af695c;
+}
+
+.progress{
+  background-color: #eaeaea;
+}
+
+.ayat-box{
+  border-bottom: 1px solid #d9d9d9;
+  margin-top: 40px;
+}
+.arabic-text{
+  font-family: serif;
+  text-align: right;
+  font-size: 200%;
+}
+
+.icon-column{
+  text-align: center;
+  padding: 0;
+  color: #2a2a2a;
+}
+
+.text-invisible{
+  height: 0;
+  opacity: 0;
+}
+
+.icons:hover{
+  color: #af695c;
+}
+
+.icon-kazakh{
+  color:#af695c;
+}
+
+.icon-kazakh-turnoff{
+  color: #2a2a2a;
+}
+
+.icon-highlight{
+  color:#af695c;
+}
+
+@media(max-width:578px){
+  .ayats-row{
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}

@@ -1,0 +1,36 @@
+const express = require('express');
+const https = require('https');
+const app = express();
+const port = 3000;
+
+app.use(express.static(__dirname));
+
+app.get('/', (request, response) => {
+  response.sendFile(__dirname + '/index.html');
+  
+});
+
+app.get('/sura', function(req, res){
+  res.sendFile(__dirname+'/fatiha.html')
+
+  // const url = 'https://api.quran.com/api/v3/chapters/fatiha/verses/1';
+  // https.get(url, function(response){
+  //   console.log(response.statusCode);
+  //   var info = '';
+  //   response.on('data', function(data){
+  //     info += data;
+  //   });
+  //
+  //   response.on('end', function(){
+  //     // var audioInfo = JSON.parse(info).verse.words[0].audio.url;
+  //     res.send('https://dl.salamquran.com/wbw/001/001_001_001.mp3');
+  //     // var audio = new Audio(audioInfo);
+  //     // audio.play();
+  //     // res.json(audioInfo);
+  //   });
+  // });
+});
+
+app.listen(port, () => {
+  console.log('listening on port '+port);
+});
