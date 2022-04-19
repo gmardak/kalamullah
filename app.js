@@ -1,10 +1,9 @@
 const express = require('express');
-const https = require('https');
+// const https = require('https');
 const path = require('path');
 const fs = require('fs');
-const mongoose = require('mongoose');
+// const mongoose = require('mongoose');
 const db = require(__dirname + '/database.js');
-const chapters = db().find({}, '-_id -__v');
 
 const app = express();
 const port = 3000;
@@ -16,19 +15,13 @@ app.use("/public", express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs');
 
 app.get('/', function(req, res){
-  
-
-  // let chapters = chaptersQuery();
-  // let chapters = chaptersModel.find({});
-  // console.log(chapters);
-
-  // console.log('phase 1');
-  // let surahs = fs.readFile('db/surah.json', (err, data) => {
-  //   // if (err) throw err;
-  //   let chapters = JSON.parse(data);
-  //   // console.log('data ' + data);
-  //   // console.log('phase 2');
-  //   console.log(Object.keys(chapters).length);
+  const chapters = db().find({}, '-_id -__v').sort('chapter_id');
+  chapters.then(surahs=>{
+    res.render('main', {chapters:surahs});
+  });
+  // let harakat_surahs = fs.readFile('db/surah.json', (err, data) => {
+  //   if (err) throw err;
+  //   let harakat_chapters = JSON.parse(data);
   // });
   // const chaptersURL = 'https://api.quran.com/api/v3/chapters';
   // https.get(chaptersURL, function(response){

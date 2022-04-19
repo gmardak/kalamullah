@@ -74,38 +74,36 @@
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
           </div>
           <div class="row sura-table justify-content-center">
-              <div class="row gy-3">
-                  <div class="col-lg-4 col-md-6">
-                    <a href="fatiha.html">
-                      <div class="container-fluid sura-box">
-                          <div class="row justify-content-between">
-
-                            <div class="col">
-                              <div class="row">
-                                <div class="col-2 rhombus-col">
-                                  <div class="rhombus">
-                                    <span class='sura-number'>1</span>
-                                  </div>
-                                </div>
-                                <div class="col-2 text-start sura-box-text-left">
-                                  <div class='sura-name-kazakh'><%= nameEnglish %></div>
-                                  <div class='sura-location'><%= place %></div>
-                                </div>
+            <% for(var i=0; i < chapters.length; i++){ %>
+              <div class="col-lg-4 col-md-6">
+                <a href="/sura?id=<%= chapters[i].chapter_id %>"> <!--you have ejs anchor tage here -->
+                  <div class="container-fluid sura-box">
+                      <div class="row justify-content-between">
+                        <div class="col">
+                          <div class="row">
+                            <div class="col-2 rhombus-col">
+                              <div class="rhombus">
+                                <span class='sura-number'><%= chapters[i].chapter_id %></span>
                               </div>
                             </div>
-
-                            <div class="col">
-                              <div class="col-12 text-end sura-box-text-right">
-                                <div class="sura-name-arabic"><%= sura_name %></div>
-                                <div class="ayat-number"><%= amount %></div>
-                              </div>
+                            <div class="col-2 text-start sura-box-text-left">
+                              <div class='sura-name-kazakh'><%= chapters[i].name_kazakh %></div>
+                              <div class='sura-location'><%= chapters[i].translation_kazakh %></div>
                             </div>
                           </div>
-                      </div>
-                    </a>
-                  </div>
+                        </div>
 
+                        <div class="col">
+                          <div class="col-12 text-end sura-box-text-right">
+                            <div class="sura-name-arabic"><%= chapters[i].name_arabic %></div>
+                            <div class="ayat-number"><%= chapters[i].verses_count %> Аят</div>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                </a>
               </div>
+            <% } %>
 
           </div>
         </div>
