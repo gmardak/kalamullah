@@ -3,27 +3,33 @@ const https = require('https');
 const path = require('path');
 const fs = require('fs');
 const mongoose = require('mongoose');
+const db = require(__dirname + '/database.js');
+const chapters = db().find({}, '-_id -__v');
 
 const app = express();
 const port = 3000;
 
-mongoose.connect('mongodb://localhost:27017/quran', (err, db) => {
-  if (err) throw err;
-  console.log('DB is created');
-});
+
+
 
 app.use("/public", express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs');
 
 app.get('/', function(req, res){
-  console.log('phase 1');
-  let surahs = fs.readFile('db/surah.json', (err, data) => {
-    // if (err) throw err;
-    let chapters = JSON.parse(data);
-    // console.log('data ' + data);
-    // console.log('phase 2');
-    console.log(Object.keys(chapters).length);
-  });
+  
+
+  // let chapters = chaptersQuery();
+  // let chapters = chaptersModel.find({});
+  // console.log(chapters);
+
+  // console.log('phase 1');
+  // let surahs = fs.readFile('db/surah.json', (err, data) => {
+  //   // if (err) throw err;
+  //   let chapters = JSON.parse(data);
+  //   // console.log('data ' + data);
+  //   // console.log('phase 2');
+  //   console.log(Object.keys(chapters).length);
+  // });
   // const chaptersURL = 'https://api.quran.com/api/v3/chapters';
   // https.get(chaptersURL, function(response){
   //   var quran = '';
@@ -45,7 +51,7 @@ app.get('/', function(req, res){
   //       ayatNumber.push(quran.chapters[i].verses_count);
   //       // chapters.push(chapterInfo(quran.chapters[i].name_simple, quran.chapters[i].name_arabic, quran.chapters[i].revelation_place, quran.chapters[i].verses_count));
   //     }
-  //     res.render('main', {suraID:suraID, suraEnglish: suraEnglish, revelationPlace:revelationPlace, suraArabic:suraArabic, ayatNumber:ayatNumber});
+  // res.render('main', {suraID:suraID, suraEnglish: suraEnglish, revelationPlace:revelationPlace, suraArabic:suraArabic, ayatNumber:ayatNumber});
   //   });
   // });
 });
