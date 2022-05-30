@@ -1,0 +1,375 @@
+<div class="row sura-table justify-content-center">
+  <% for(var i=0; i < chapters.length; i++){ %>
+    <div class="col-lg-4 col-md-6">
+      <a href="/sura?id=<%= chapters[i].chapter_id %>"> <!--you have ejs anchor tage here -->
+        <div class="container-fluid sura-box">
+            <div class="row justify-content-between">
+              <div class="col-8">
+                <div class="row">
+                  <div class="col-2 rhombus-col">
+                    <div class="rhombus">
+                      <span class='sura-number'><%= chapters[i].chapter_id %></span>
+                    </div>
+                  </div>
+                  <div class="col-2 text-start sura-box-text-left">
+                    <div class='sura-name-kazakh'><%= chapters[i].name_kazakh %></div>
+                    <div class='sura-location'><%= chapters[i].translation_kazakh %></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="col-12 text-end sura-box-text-right">
+                  <div class="sura-name-arabic"><%= chapters[i].name_arabic %></div>
+                  <div class="ayat-number"><%= chapters[i].verses_count %> Аят</div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </a>
+    </div>
+  <% } %>
+
+</div>
+
+
+
+---------------------------------------------------------------------------------------
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="icon" type='image' href="icon-quran.png">
+    <title>Құран Кәрім - kalamullah.kz</title>
+    <meta name="keywords" content="Islam, Quran, Muslim, Islamic, Ислам, Құран, мұсылман, Куран">
+    <meta name="author" content="Ардақ Қойшыбаев">
+    <meta name="viewport" content="width=device-width, inital-scale=1">
+    <meta name="description" content="Құран Кәрім аудармасы және тәпсірімен бірге">
+    <meta name="Distribution" content="Global">
+    <meta name="Rating" content="General">
+    <meta name="theme-color" content="#af695c">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="static/quran-og.jpg">
+    <meta property="og:image:alt" content="">
+    <meta property="og:image:widt" content="2121">
+    <meta property="og:image:height" content="1414">
+    <meta property="og:locale" content="kz_KZ">
+    <meta property="og:site_name" content="kalamullah.kz">
+    <meta property="og:title" content="Құран Кәрім - kalamullah.kz">
+    <meta property="og:url" content="https://quran.com">
+    <noscript>Сіздің браузеріңіз Javascript қолдамайды<br>
+    Ваш браузер не поддерживает Javascript<br>
+    Your browser does not support Javascript<br>
+    </noscript>
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="public/styles.css">
+  </head>
+  <!-- <body> -->
+    <div class="container-fluid">
+      <div class="row align-self-center content-navbar">
+        <div class="col">
+          <nav class="navbar navbar-light fixed-top">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="/">kalamullah.kz</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                  <h5 class="offcanvas-title" id="offcanvasNavbarLabel">kalamullah.kz</h5>
+                  <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                  <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Link</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div> -->
+
+      <div class="container-fluid class-progress-bar">
+
+        <div class="col-12">
+          <a data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+            00000000 Сүресі
+          </a>
+
+          <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasExampleLabel">kalamullah.kz</h5>
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <div class="row">
+                <div class="col-9">
+                  <ul class="list-group">
+                    <li class="list-group-item"><a href="#" class="list-group-item list-group-item-action">Фатиха</a></li>
+                    <li class="list-group-item"><a href="#" class="list-group-item list-group-item-action">Бақара</a></li>
+                  </ul>
+                </div>
+                <div class="col-3">
+                  <ul class="list-group">
+                    <li class="list-group-item"><a href="#" class="list-group-item list-group-item-action">1</a></li>
+                    <li class="list-group-item"><a href="#" class="list-group-item list-group-item-action">2</a></li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="container-fluid class-progress-bar">
+            <div class="progress" style="height: 2px;">
+              <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-12 fatiha">
+          <h3>000000000000 Сүресі</h3>
+        </div>
+
+        <div class="col-12">
+          <div class="container ayat-box">
+            <div class="row">
+              <div class="col-1 icon-column">
+                <div class="row">
+                  <div class="col-12">
+                    00
+                  </div>
+                  <div class="col-12">
+                    <i class="fa-solid fa-earth-europe icon-kazakh icons" data-toggle="tooltip" data-placement="top" title="Аударма"></i>
+                  </div>
+                  <div class="col-12">
+                    <i class="fa-solid fa-book-quran icon-tafseer icons" data-toggle="tooltip" data-placement="top" title="Тәпсір"></i>
+                  </div>
+                  <div class="col-12">
+                    <i class="fa-solid fa-language icon-transcript icons" data-toggle="tooltip" data-placement="top" title="Транскрипция"></i>
+                  </div>
+                  <div class="col-12">
+                    <i class="fa-solid fa-play" data-toggle="tooltip" data-placement="top" title="Возпроизведение"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="col-11">
+                <div class="row">
+                  <div class="col-12">
+                    <span>11111111111111111111111</span>
+                    <p class = 'arabic-text'><%= chapter[i]. %></p>
+                  </div>
+                  <div class="col-12 kazakh-translation">
+                    <span>222222222222222222222222</span>
+                    <p>Аса қамқор, ерекше мейірімді Алланың атымен бастаймын</p> -->
+                  <!-- </div>
+                  <div class="col-12 tafseer text-invisible">
+                    <span>33333333333333333333333333333</span>
+                  </div>
+                  <div class="col-12 transcript text-invisible">
+                    <span>4444444444444444444444444444444</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- </div> -->
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src='public/index.js'></script>
+  </body> -->
+</html>
+
+
+
+
+------------------------------------------------------
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="icon" type='image' href="icon-quran.png">
+    <title>Құран Кәрім - kalamullah.kz</title>
+    <meta name="keywords" content="Islam, Quran, Muslim, Islamic, Ислам, Құран, мұсылман, Куран">
+    <meta name="author" content="Ардақ Қойшыбаев">
+    <meta name="viewport" content="width=device-width, inital-scale=1">
+    <meta name="description" content="Құран Кәрім аудармасы және тәпсірімен бірге">
+    <meta name="Distribution" content="Global">
+    <meta name="Rating" content="General">
+    <meta name="theme-color" content="#af695c">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="static/quran-og.jpg">
+    <meta property="og:image:alt" content="">
+    <meta property="og:image:widt" content="2121">
+    <meta property="og:image:height" content="1414">
+    <meta property="og:locale" content="kz_KZ">
+    <meta property="og:site_name" content="kalamullah.kz">
+    <meta property="og:title" content="Құран Кәрім - kalamullah.kz">
+    <meta property="og:url" content="https://quran.com">
+    <noscript>Сіздің браузеріңіз Javascript қолдамайды<br>
+    Ваш браузер не поддерживает Javascript<br>
+    Your browser does not support Javascript<br>
+    </noscript>
+    <!-- <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="public/styles-surah.css">
+  </head>
+  <body>
+    <div class="container-fluid">
+
+      <div class="row align-self-center content-navbar">
+        <div class="col">
+          <nav class="navbar navbar-light fixed-top">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="/">KALAMULLAH</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                  <h5 class="offcanvas-title" id="offcanvasNavbarLabel">kalamullah.kz</h5>
+                  <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                  <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                      <a class="nav-link" aria-current="page" href="#">Басты бет</a>
+                    </li>
+                    <li class="nav-item">
+                      <% if(language=='kz'){ %>
+                        <a class="nav-link" href="/ru">Сайт на русском</a>
+                      <% }else{ %>
+                        <a class="nav-link" href="/kz">Қазақша сайт</a>
+                      <% } %>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+
+      <!-- <div class="container-fluid class-progress-bar">
+
+        <div class="col-12">
+          <a data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+            00000000 Сүресі
+          </a>
+
+          <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasExampleLabel">kalamullah.kz</h5>
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <div class="row">
+                <div class="col-9">
+                  <ul class="list-group">
+                    <li class="list-group-item"><a href="#" class="list-group-item list-group-item-action">Фатиха</a></li>
+                    <li class="list-group-item"><a href="#" class="list-group-item list-group-item-action">Бақара</a></li>
+                  </ul>
+                </div>
+                <div class="col-3">
+                  <ul class="list-group">
+                    <li class="list-group-item"><a href="#" class="list-group-item list-group-item-action">1</a></li>
+                    <li class="list-group-item"><a href="#" class="list-group-item list-group-item-action">2</a></li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="container-fluid class-progress-bar">
+            <div class="progress" style="height: 2px;">
+              <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>
+
+      </div> -->
+
+      <!-- <div class="row justify-content-center">
+        <div class="col chapter-name">
+          <%= chapterName%> Сүресі
+        </div> -->
+
+        <!-- <div class="col-12">
+          <div class="container ayat-box">
+            <div class="row">
+              <div class="col-1 icon-column">
+                <div class="row">
+                  <div class="col-12">
+                    00
+                  </div>
+                  <div class="col-12">
+                    <i class="fa-solid fa-earth-europe icon-kazakh icons" data-toggle="tooltip" data-placement="top" title="Аударма"></i>
+                  </div>
+                  <div class="col-12">
+                    <i class="fa-solid fa-book-quran icon-tafseer icons" data-toggle="tooltip" data-placement="top" title="Тәпсір"></i>
+                  </div>
+                  <div class="col-12">
+                    <i class="fa-solid fa-language icon-transcript icons" data-toggle="tooltip" data-placement="top" title="Транскрипция"></i>
+                  </div>
+                  <div class="col-12">
+                    <i class="fa-solid fa-play" data-toggle="tooltip" data-placement="top" title="Возпроизведение"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="col-11">
+                <div class="row">
+                  <div class="col-12">
+                    <span>11111111111111111111111</span>
+                    <p class = 'arabic-text'>12121212121212121212</p>
+                  </div>
+                  <div class="col-12 kazakh-translation">
+                    <span>222222222222222222222222</span>
+                    <p>Аса қамқор, ерекше мейірімді Алланың атымен бастаймын</p>
+                  </div>
+                  <div class="col-12 tafseer text-invisible">
+                    <span>33333333333333333333333333333</span>
+                  </div>
+                  <div class="col-12 transcript text-invisible">
+                    <span>4444444444444444444444444444444</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+      </div>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src='public/index.js'></script>
+  </body>
+</html>

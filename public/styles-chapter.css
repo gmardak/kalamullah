@@ -1,0 +1,72 @@
+/* Fatiha */
+h3{
+  text-align: center;
+}
+
+
+.fatiha{
+  font-size: 137%;
+  color: inherit;
+  margin-top:60px;
+  margin-bottom: 100px;
+}
+
+.class-progress-bar{
+  position: fixed;
+  background-color: #f9f4ed;
+  margin-top: 0px;
+  transition: margin-top 0.9s;
+  box-shadow: 0 4px 6px -2px #adadad;
+}
+
+.progress-bar{
+  background-color: #af695c;
+}
+
+.progress{
+  background-color: #eaeaea;
+}
+
+.ayat-box{
+  border-bottom: 1px solid #d9d9d9;
+  margin-top: 40px;
+}
+.arabic-text{
+  font-family: serif;
+  text-align: right;
+  font-size: 200%;
+}
+
+.icon-column{
+  text-align: center;
+  padding: 0;
+  color: #2a2a2a;
+}
+
+.text-invisible{
+  height: 0;
+  opacity: 0;
+}
+
+.icons:hover{
+  color: #af695c;
+}
+
+.icon-kazakh{
+  color:#af695c;
+}
+
+.icon-kazakh-turnoff{
+  color: #2a2a2a;
+}
+
+.icon-highlight{
+  color:#af695c;
+}
+
+@media(max-width:578px){
+  .ayats-row{
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}

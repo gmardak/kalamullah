@@ -3,97 +3,55 @@ const express = require('express');
 const path = require('path');
 const fs = require('fs');
 // const mongoose = require('mongoose');
-const db = require(__dirname + '/database.js');
+// const db = require(__dirname + '/database.js');
 
 const app = express();
-const port = 3000;
-
-
-
 
 app.use("/public", express.static(path.join(__dirname, 'public')));
+app.use("/public", express.static(path.join(__dirname, 'db')));
 app.set('view engine', 'ejs');
 
 app.get('/', function(req, res){
-  const chapters = db().find({}, '-_id -__v').sort('chapter_id');
-  chapters.then(surahs=>{
-    res.render('main', {chapters:surahs});
-  });
-  // let harakat_surahs = fs.readFile('db/surah.json', (err, data) => {
-  //   if (err) throw err;
-  //   let harakat_chapters = JSON.parse(data);
-  // });
-  // const chaptersURL = 'https://api.quran.com/api/v3/chapters';
-  // https.get(chaptersURL, function(response){
-  //   var quran = '';
-  //   response.on('data', function(data){
-  //     quran += data;
-  //   });
-  //   response.on('end', function(){
-  //     quran = JSON.parse(quran);
-  //     var suraID = []
-  //     var suraEnglish = [];
-  //     var revelationPlace = [];
-  //     var suraArabic = [];
-  //     var ayatNumber = [];
-  //     for(let i = 0; i < quran.chapters.length; i++){
-  //       suraID.push(quran.chapters[i].id);
-  //       suraEnglish.push(quran.chapters[i].name_simple);
-  //       revelationPlace.push(quran.chapters[i].revelation_place);
-  //       suraArabic.push(quran.chapters[i].name_arabic);
-  //       ayatNumber.push(quran.chapters[i].verses_count);
-  //       // chapters.push(chapterInfo(quran.chapters[i].name_simple, quran.chapters[i].name_arabic, quran.chapters[i].revelation_place, quran.chapters[i].verses_count));
-  //     }
-  // res.render('main', {suraID:suraID, suraEnglish: suraEnglish, revelationPlace:revelationPlace, suraArabic:suraArabic, ayatNumber:ayatNumber});
-  //   });
+  res.redirect('/kz')
+});
+
+app.get('/kz', function(req, res){
+  let chapters = fs.readFileSync(__dirname + '/db/chapters.json');
+  chapters = JSON.parse(chapters).chapters;
+  let intro = fs.readFileSync(__dirname + '/db/intro.json');
+  intro = JSON.parse(intro);
+  let language = 'kz';
+  res.render('main', {language:language, chapters:chapters, intro:intro});
+  // const chapters = db().find({}, '-_id -__v').sort('chapter_id');
+  // chapters.then(surahs=>{
+  //   res.render('main', {chapters:surahs});
   // });
 });
+
+app.get('/ru', function(req, res){
+  let chapters = fs.readFileSync(__dirname + '/db/chapters.json');
+  chapters = JSON.parse(chapters).chapters;
+  let intro = fs.readFileSync(__dirname + '/db/intro.json');
+  intro = JSON.parse(intro);
+  let language = 'ru';
+  res.render('main', {language:language, chapters:chapters, intro:intro});
+});
 //
-// app.get('/sura', function(req, res){
-//   // const options = {
-//   //   'method':'GET',
-//   //   'hostname':'api.quran.com',
-//   //   'port':null,
-//   //   'path':'/api/v3/chapters/100/verses',
-//   //   'header':{}
-//   // };
-//   //
-//   // var req = https.request(options, function(response){
-//   //   var chunks = [];
-//   //
-//   //   response.on('data',function(chunk){
-//   //     chunks.push(chunk);
-//   //   });
-//   //   response.on('end', function(){
-//   //     var body = Buffer.concat(chunks);
-//   //     console.log(body.toString());
-//   //   });
-//   // });
-//   // req.write("{}");
-//   // req.end();
+app.get('/sura', function(req, res){
+  let id = req.query.id;
+  let language = id.slice(-2);
+  id = id.slice(0, -2);
+  let chapter = fs.readFileSync(__dirname + `/db/${id}.json`);
+  chapter = JSON.parse(chapter).verses;
+  let chapters = fs.readFileSync(__dirname + '/db/chapters.json');
+  chapters = JSON.parse(chapters).chapters;
+  res.render('sura', {language:language, id:id, chapter:chapter, chapters: chapters});
+});
 
-
-//   let id = req.query.id;
-//   const chapterURL = 'https://api.quran.com/api/v3/chapters/'+id+'/verses';
-//   https.get(chapterURL, function(response){
-//     var chapter = '';
-//     response.on('data', function(data){
-//       chapter += data;
-//     });
-//     response.on('end', function(){
-//       chapter = JSON.parse(chapter);
-//       var verseKey = [];
-//       var verses = [];
-//       console.log(chapter.verses.length);
-//       for(let i = 0; i < chapter.verses.length; i++){
-//         verseKey.push(chapter.verses[i].verse_key);
-//         verses.push(chapter.verses[i].text_madani);
-//       }
-//       res.render('sura', {verseKey:verseKey, verses:verses});
-//     });
-//   });
-// });
-
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8000;
+}
 
 app.listen(port, () => {
   console.log('listening on port '+port);
